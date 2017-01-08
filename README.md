@@ -3,7 +3,7 @@
 
   The main purpose of this project is an scalable data processing. Through Apache Kafka, it buffers data and pushs to consumers. Through Apache Spark, it processes fast data.
   
-  Each application is in a Docker container. Through Docker-compose, launch full stack with oneliner: `docker-compose up`.       This is [docker-compose.yml](http://www.slideshare.net/BarCirit/volume-rated-average-price) file.
+  Each application is in a Docker container. Through Docker-compose, launch full stack with oneliner: `docker-compose up`.       This is [docker-compose.yml](docker-compose.yml) file.
   
   Project architecture is as shown below:
   ![alt tag](vwap.png)
