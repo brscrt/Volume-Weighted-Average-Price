@@ -8,6 +8,6 @@
   Project architecture is as shown below:
   ![alt tag](vwap.png)
   
-  You can access [slide](http://www.slideshare.net/BarCirit/volume-rated-average-price) of this project.
+  You can access [slide](http://www.slideshare.net/BarCirit/volume-weighted-average-price) of this project.
   
   To look details of producer and consumer applications, here are links: [producer](https://github.com/brscrt/kafkaProducer), [kafka consumer](https://github.com/brscrt/kafkaConsumer), [spark consumer](https://github.com/brscrt/SparkKafkaConsumer), [vert.x consumer](https://github.com/brscrt/Vert.xKafkaConsumer)
