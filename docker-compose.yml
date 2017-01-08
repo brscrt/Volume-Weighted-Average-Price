@@ -1,0 +1,54 @@
+version: '2'
+services:
+ zookeeper:
+  image: brscrt/zookeeper
+  container_name: zookeeper
+  ports:
+   - "2181:2181"
+  network_mode: "bridge"
+ kafka:
+  image: brscrt/kafka
+  container_name: kafka
+  depends_on:
+   - zookeeper
+  links:
+   - zookeeper:zookeeper
+  ports:
+   - "9092:9092"
+   - "7203:7203"
+  network_mode: "bridge"
+ mongodb:
+  image: brscrt/mongodb
+  container_name: mongodb
+  ports:
+   - "27017:27017"
+  environment:
+   - AUTH="no"
+ kafkaconsumer:
+  image: brscrt/kafkaconsumer
+  container_name: kafkaconsumer
+  depends_on:
+   - kafka
+   - mongodb
+  network_mode: "bridge"
+ sparkconsumer:
+  image: brscrt/sparkkafkaconsumer
+  container_name: sparkconsumer
+  depends_on:
+   - kafka
+   - mongodb
+  network_mode: "bridge"
+ vertxconsumer:
+  image: brscrt/vertxconsumer
+  container_name: vertxconsumer
+  depends_on:
+   - kafka
+   - mongodb
+  network_mode: "bridge"
+ producer:
+  image: brscrt/kafkaproducer
+  container_name: producer
+  depends_on:
+   - kafka
+   - mongodb
+  network_mode: "bridge"
